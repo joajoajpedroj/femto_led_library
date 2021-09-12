@@ -2,7 +2,6 @@
 #include "hardware/dma.h"
 #include "ws2812.pio.h"
 #include <stdlib.h>
-#include "pico/stdlib.h"
 // LED data type containing the red, green and blue values
 typedef struct {
 	uint8_t G, R, B;
