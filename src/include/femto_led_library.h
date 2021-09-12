@@ -30,9 +30,10 @@ typedef struct {
 } Strip;
 
 /*!
- * \brief Helper function to create an led strip
+ * \brief Helper function to create an LED strip
  *
- * \param nLeds Number of leds in the strip
+ * \param nLeds Number of LEDs in the strip
+ * \param pin Pin used for the LED strip communication
  */
 
 Strip init_strip(unsigned int nLeds, int pin){
@@ -77,10 +78,6 @@ Strip init_strip(unsigned int nLeds, int pin){
 void update_strip(Strip strip){
 	dma_channel_config c = strip.c;
 	PIO pio = strip.pio;
-
-//	if(dma_channel_is_busy(strip.channel)){
-//		dma_channel_wait_for_finish_blocking(strip.channel);
-//	}
 
 	dma_channel_configure(strip.channel, &c,
 		&pio->txf[strip.sm], // Destination pointer (the state machine)
