@@ -73,7 +73,7 @@ Strip init_strip(unsigned int nLeds, int pin){
 /*!
  * \brief Helper function to update the physical LEDS
  *
- * \param strip pointer to strip to be updated.
+ * \param strip strip to be updated.
  */
 void update_strip(Strip strip){
 	dma_channel_config c = strip.c;
